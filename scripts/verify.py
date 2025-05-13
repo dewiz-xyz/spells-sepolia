@@ -52,10 +52,10 @@ for path in content['contracts'].keys():
 if contract_path == '':
     exit('contract name not found.')
 
-print('Obtaining chain... ')
-cast_chain = subprocess.run(['cast', 'chain'], capture_output=True)
-chain = cast_chain.stdout.decode('ascii').replace('\n', '')
-print(chain)
+print('Obtaining chain ID... ')
+cast_chain_id = subprocess.run(['cast', 'chain-id'], capture_output=True)
+chain_id = cast_chain_id.stdout.decode('utf-8')[:-1]
+print("CHAIN_ID: " + chain_id)
 
 text_metadata = content['contracts'][contract_path][contract_name]['metadata']
 metadata = json.loads(text_metadata)
@@ -207,6 +207,7 @@ except ValueError as e:
     print('Assuming this contract uses no libraries')
 
 data = {
+    'chainid': chain_id,
     'apikey': api_key,
     'module': module,
     'action': action,
@@ -224,18 +225,7 @@ data = {
     'libraryaddress1': library_address,
 }
 
-if chain in ['mainnet', 'ethlive']:
-    chain_separator = False
-    chain_id = ''
-else:
-    chain_separator = True
-    chain_id = chain
-
-url = 'https://api{0}{1}.etherscan.io/api'.format(
-    '-' if chain_separator else '',
-    chain_id
-)
-
+url = 'https://api.etherscan.io/v2/api'
 headers = {
     'User-Agent': ''
 }
