@@ -81,7 +81,7 @@ contract DssSpellAction is DssAction {
     // ---------- STAR2 Proxy Spell ----------
     // Note: The deployment address for the Bloom Proxy can be found at https://forum.sky.money/t/technical-scope-of-the-star-2-allocator-launch/26190
 
-    uint256 internal constant NONCE = 17;
+    uint256 internal constant NONCE = 18;
 
     function actions() public override {
         LibInit.init();
