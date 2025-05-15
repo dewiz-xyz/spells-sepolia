@@ -8,6 +8,6 @@ fs_permissions = [
 ]
 
 [rpc_endpoints]
-mainnet = "${ETH_RPC_URL}"
+sepolia = "${ETH_RPC_URL}"
 
 # See more config options https://github.com/gakonst/foundry/tree/master/config
