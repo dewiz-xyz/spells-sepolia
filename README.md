@@ -1,6 +1,6 @@
 > [!WARNING]
-> This repository **IS NOT** a full port of Sky Protocol's [spells-mainnet](https://github.com/skyprotocol/spells-mainnet) repo.
-> It does not work with regular spells and should only be used for the purposes of testing and debugging the source code verification for spells.
+> This repository **IS NOT** a full port of Sky Protocol's [spells-mainnet](https://github.com/skyprotocol/spells-mainnet) repo.  
+> It does not work with regular spells and should only be used for the purposes of testing and debugging the source code verification for spells.  
 > We use Sepolia only to not waste real ETH deploying contracts.
 
 # spells-mainnet
