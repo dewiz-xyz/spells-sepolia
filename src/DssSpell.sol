@@ -21,6 +21,8 @@ import "dss-exec-lib/DssAction.sol";
 
 import { GemAbstract } from "dss-interfaces/ERC/GemAbstract.sol";
 
+import { LibInit } from "./dependencies/LibInit.sol";
+
 interface DaiUsdsLike {
     function daiToUsds(address usr, uint256 wad) external;
 }
@@ -79,10 +81,10 @@ contract DssSpellAction is DssAction {
     // ---------- STAR2 Proxy Spell ----------
     // Note: The deployment address for the Bloom Proxy can be found at https://forum.sky.money/t/technical-scope-of-the-star-2-allocator-launch/26190
 
-    uint256 internal constant NONCE = 14;
+    uint256 internal constant NONCE = 17;
 
     function actions() public override {
-
+        LibInit.init();
     }
 }
 
