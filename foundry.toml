@@ -15,6 +15,9 @@ libraries = [
 ]
 
 [rpc_endpoints]
+mainnet = "${ETH_RPC_URL}"
 sepolia = "${ETH_RPC_URL}"
 
-# See more config options https://github.com/gakonst/foundry/tree/master/config
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "${ETHERSCAN_API_KEY}" }
