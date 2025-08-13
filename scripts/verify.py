@@ -13,7 +13,7 @@ import json
 import requests
 import random
 from datetime import datetime
-from typing import Dict, Any, Tuple, Optional, List
+from typing import Dict, Any, Tuple, Optional, List, Callable
 from functools import wraps
 
 # Constants
